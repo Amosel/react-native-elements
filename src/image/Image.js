@@ -12,9 +12,15 @@ import { nodeType } from '../helpers';
 import { ViewPropTypes, withTheme } from '../config';
 
 class Image extends React.PureComponent {
-  placeholderContainerOpacity = new Animated.Value(1);
+  
+
+  constructor(props) {
+    super(props)
+    this.placeholderContainerOpacity = new Animated.Value(props.animate ? 1 : 0);
+  }
 
   onLoadEnd = () => {
+    if(!this.props.animate) return
     /* Images finish loading in the same frame for some reason,
         the images will fade in separately with staggerNonce */
     const minimumWait = 100;

@@ -107,6 +107,11 @@ export class Text extends React.Component<TextProps, any> {}
 
 export interface AvatarProps {
   /**
+   * should fade in image.
+   * @default false
+   */
+  animate?: boolean,
+  /**
    * Component for enclosing element (eg: TouchableHighlight, View, etc)
    *
    * @default TouchableOpacity

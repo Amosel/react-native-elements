@@ -191,6 +191,7 @@ const styles = StyleSheet.create({
 });
 
 Avatar.propTypes = {
+  animate: PropTypes.bool,
   Component: PropTypes.oneOf([
     View,
     TouchableOpacity,
@@ -231,6 +232,7 @@ Avatar.propTypes = {
 };
 
 Avatar.defaultProps = {
+  animate: false,
   showEditButton: false,
   onEditPress: null,
   size: 'small',
